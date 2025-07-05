@@ -1,5 +1,5 @@
 // define type FIRST, id, make, model, year
-type CarInfo = {
+type CarType = {
   id: number;
   make: string;
   model: string;
@@ -41,12 +41,32 @@ class Car {
     return `${this.make} ${this.model} ${this.year}`;
   }
 }
+// car array
+let carArray: Car[] = [];
 
 // get car info
-function getCarInfo() {}
+async function getCarInfo(carAPI: string): Promise<void> {
+  try {
+    const response = await fetch(apiUrl);
+    if (response.ok) {
+      const data: CarType[] = await response.json();
+
+      // Create Car objects and add to the list
+      carArray = data.map(
+        (carData) =>
+          new Car(carData.id, carData.make, carData.model, carData.year)
+      );
+      console.log("Cars fetched successfully");
+    }
+  } catch (error) {
+    console.error("Cars not fetched successfully:", error);
+  }
+}
 
 // display car info
 function displayCarInfo() {}
 
 // init function
-function init() {}
+function init() {
+  const carAPI: string = "";
+}
