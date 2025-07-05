@@ -20,12 +20,27 @@ class Car {
       (this.year = year);
   }
 
-  // public displayMake() {
-  //   return `here is the make ${this.make}`;
-  // }
+  // getters, they are used to bypass the encapsulation principle i think
+  getId(): number {
+    return this.id;
+  }
+
+  getMake(): string {
+    return this.make;
+  }
+
+  getModel(): string {
+    return this.model;
+  }
+
+  getYear(): number {
+    return this.year;
+  }
+  // format info into str
+  formatString(): string {
+    return `${this.make} ${this.model} ${this.year}`;
+  }
 }
-// const Nissan305Z = new Car(1, "Nissan", "350Z", 2010);
-// console.log(Nissan305Z.displayMake());
 
 // get car info
 function getCarInfo() {}
