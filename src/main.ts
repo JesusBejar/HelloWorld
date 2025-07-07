@@ -46,8 +46,9 @@ let carArray: Car[] = [];
 
 // get car info
 async function getCarInfo(carAPI: string): Promise<void> {
+  console.log("one");
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(carAPI);
     if (response.ok) {
       const data: CarType[] = await response.json();
 
@@ -61,9 +62,12 @@ async function getCarInfo(carAPI: string): Promise<void> {
   } catch (error) {
     console.error("Cars not fetched successfully:", error);
   }
+  console.log("two");
 }
 // log car info
 function logCarInfo(): void {
+  console.log("three");
+
   console.log("Car list:");
   // this would print the entire list correct?
   console.log(carArray);
@@ -71,13 +75,46 @@ function logCarInfo(): void {
   carArray.forEach((car) => {
     console.log(` - ${car.formatString()}`);
   });
+  console.log("four");
 }
 
 // display car info
-function displayCarInfo() {}
+function displayCarInfo() {
+  console.log("five");
+
+  const textSection = document.querySelector("#car-info") as HTMLElement;
+  if (textSection) {
+    textSection.textContent = "";
+    textSection.textContent = `
+    ${carArray
+      .map(
+        (car) =>
+          `<ul>
+        <li> ${car.getId()}</li>
+        <li> ${car.getMake()}</li>
+        <li> ${car.getModel()}</li>
+        <li> ${car.getYear()}</li>
+        </ul>`
+      )
+      .join(" ")}`;
+  } else {
+    console.log("Car text section not found!");
+  }
+  console.log("six");
+}
 
 // init function
-function init() {
-  const carAPI: string =
-    "https://fipe.parallelum.com.br/api/v2/cars/brands/59/models";
+async function init() {
+  const carAPI: string = "https://fipe.parallelum.com.br/api/v2/cars/brands";
+  const btnOne = document.querySelector("#btnOne") as HTMLButtonElement;
+  const btnTwo = document.querySelector("#btnTwo") as HTMLButtonElement;
+  await getCarInfo(carAPI);
+  btnOne.addEventListener("click", (e) => {
+    displayCarInfo();
+  });
+  btnTwo.addEventListener("click", (e) => {
+    logCarInfo();
+  });
 }
+
+window.onload = init;
