@@ -68,5 +68,6 @@ function displayCarInfo() {}
 
 // init function
 function init() {
-  const carAPI: string = "";
+  const carAPI: string =
+    "https://fipe.parallelum.com.br/api/v2/cars/brands/59/models";
 }
