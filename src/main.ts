@@ -62,6 +62,16 @@ async function getCarInfo(carAPI: string): Promise<void> {
     console.error("Cars not fetched successfully:", error);
   }
 }
+// log car info
+function logCarInfo(): void {
+  console.log("Car list:");
+  // this would print the entire list correct?
+  console.log(carArray);
+  // or does this work better?
+  carArray.forEach((car) => {
+    console.log(` - ${car.formatString()}`);
+  });
+}
 
 // display car info
 function displayCarInfo() {}
