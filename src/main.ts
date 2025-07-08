@@ -118,6 +118,8 @@ function displayCarInfo() {
 
 // init function
 async function init() {
+  // the default for results returned is 1
+  // https://api-ninjas.com/api/cars
   const apiKey: string = "v4cXaQ9md1PF4Nc2jiRbeA==Hrh7qCQHSxCuk9fA";
   const carAPI: string = "https://api.api-ninjas.com/v1/cars?make=toyota";
   
