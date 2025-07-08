@@ -45,8 +45,7 @@ class Car {
 let carArray: Car[] = [];
 
 // get car info
-async function getCarInfo(carAPI: string): Promise<void> {
-  console.log("one");
+async function getCarInfo(carAPI: string, apiKey: string): Promise<void> {
   try {
     const response = await fetch(carAPI);
     if (response.ok) {
