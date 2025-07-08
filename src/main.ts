@@ -2,15 +2,28 @@
 // str 2
 let str1 = "";
 let str2 = "";
+let i = 0;
+let j = 0;
 
 // main function (str1, str2)
 function longestCommonSubstring(str1, str2) {
 
   // base case
   // how many edge cases do I need to add?
-  if (str1.length ===  str2.length) {
-    return 
+  // no valid inputs
+  if (!str1 || !str2) {
+    return "please enter two strings"
   }
+  // reached the end of the strings
+  if (str1.length === 0 || str2.length === 0) {
+    return "reached the end of the strings"
+  }
+  // character in strings don't match
+  if (str1[i] !== str2[j]) {
+    return "character in strings don't match"
+  }
+
+
   // recursive function (str1, str2, i, j, length)
   function findLongestCommonSubstring(str1, str2, i, j, length) {
   }
