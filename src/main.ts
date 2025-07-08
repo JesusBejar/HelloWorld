@@ -80,20 +80,18 @@ function logCarInfo(): void {
 
 // display car info
 function displayCarInfo() {
-  console.log("five");
-
   const textSection = document.querySelector("#car-info") as HTMLElement;
   if (textSection) {
-    textSection.textContent = "";
-    textSection.textContent = `
+    textSection.innerHTML = "";
+    textSection.innerHTML = `
     ${carArray
       .map(
         (car) =>
           `<ul>
         <li> ${car.getId()}</li>
-        <li> ${car.getMake()}</li>
-        <li> ${car.getModel()}</li>
-        <li> ${car.getYear()}</li>
+        <li> Car Make - ${car.getMake()}</li>
+        <li> Car Model - ${car.getModel()}</li>
+        <li> Car Year - ${car.getYear()}</li>
         </ul>`
       )
       .join(" ")}`;
