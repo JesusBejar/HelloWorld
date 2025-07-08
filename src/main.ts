@@ -83,22 +83,15 @@ async function getCarInfo(carAPI: string, apiKey: string): Promise<void> {
         )
     );
   } catch (error) {
-    console.error("Cars not fetched successfully:", error);
+    console.error("cars not fetched successfully:", error);
   }
-  console.log("two");
 }
 // log car info
 function logCarInfo(): void {
-  console.log("three");
-
   console.log("Car list:");
-  // this would print the entire list correct?
-  console.log(carArray);
-  // or does this work better?
   carArray.forEach((car) => {
     console.log(` - ${car.formatString()}`);
   });
-  console.log("four");
 }
 
 // display car info
@@ -121,7 +114,6 @@ function displayCarInfo() {
   } else {
     console.log("Car text section not found!");
   }
-  console.log("six");
 }
 
 // init function
