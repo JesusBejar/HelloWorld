@@ -105,10 +105,14 @@ function displayCarInfo() {
 
 // init function
 async function init() {
-  const carAPI: string = "https://fipe.parallelum.com.br/api/v2/cars/brands";
+  const apiKey: string = "v4cXaQ9md1PF4Nc2jiRbeA==Hrh7qCQHSxCuk9fA";
+  const carAPI: string = "https://api.api-ninjas.com/v1/cars?make=toyota";
+  
   const btnOne = document.querySelector("#btnOne") as HTMLButtonElement;
   const btnTwo = document.querySelector("#btnTwo") as HTMLButtonElement;
-  await getCarInfo(carAPI);
+  
+  await getCarInfo(carAPI, apiKey);
+  
   btnOne.addEventListener("click", (e) => {
     displayCarInfo();
   });
