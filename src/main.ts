@@ -16,11 +16,17 @@ function longestCommonSubstring(str1: string, str2: string): string {
   if (!str1 || !str2) {
     return "please enter two strings"
   }
-  // reached the end of the strings
-  if (str1.length === 0 || str2.length === 0) {
-    return "reached the end of the strings"
+
+  // start w 1st str
+  for (let i = 0; i < str1.length; i++) {
+    // continue w str2
+    for (let j = 0; j < str2.length; j++) {
+
+    }
   }
-  // character in strings don't match
+  
+  return resultSubstring || "No common substring found";
+}
   if (str1[i] !== str2[j]) {
     return "character in strings don't match"
   }
