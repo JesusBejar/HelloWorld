@@ -6,11 +6,13 @@ let i = 0;
 let j = 0;
 
 // main function (str1, str2)
-function longestCommonSubstring(str1, str2) {
-
-  // base case
-  // how many edge cases do I need to add?
-  // no valid inputs
+function longestCommonSubstring(str1: string, str2: string): string {
+  // max length of common substring (num)
+  let maxLength = 0;
+  // longest common substring (str)
+  let resultSubstring = "";
+  
+  // base case - handle empty or invalid inputs
   if (!str1 || !str2) {
     return "please enter two strings"
   }
