@@ -47,17 +47,41 @@ let carArray: Car[] = [];
 // get car info
 async function getCarInfo(carAPI: string, apiKey: string): Promise<void> {
   try {
-    const response = await fetch(carAPI);
-    if (response.ok) {
-      const data: CarType[] = await response.json();
-
-      // Create Car objects and add to the list
-      carArray = data.map(
-        (carData) =>
-          new Car(carData.id, carData.make, carData.model, carData.year)
-      );
-      console.log("Cars fetched successfully");
+    
+    const response = await fetch(carAPI, {
+      headers: {
+        "X-Api-Key": apiKey,
+      },
+    });
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API request failed with status ${response.status}:`, errorText);
+      return;
     }
+    
+    const responseText = await response.text();    
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch (parseError) {
+      console.error("JSON did not parse:", parseError);
+      return;
+    }
+    
+    if (!Array.isArray(data)) {
+      console.error("did not return an array:", typeof data, data);
+      return;
+    }
+
+    carArray = data.map(
+      (carData, index) =>
+        new Car(
+          carData.id || index + 1,
+          carData.make, 
+          carData.model, 
+          carData.year
+        )
+    );
   } catch (error) {
     console.error("Cars not fetched successfully:", error);
   }
