@@ -18,7 +18,14 @@ function longestCommonSubstring(str1: string, str2: string): string {
   for (let i = 0; i < str1.length; i++) {
     // continue w str2
     for (let j = 0; j < str2.length; j++) {
-
+            // recursion
+            let currentLength = findLongestCommonSubstring(str1, str2, i, j, 0);
+      
+            // If this is the longest match we've found so far, remember it!
+            if (currentLength > maxLength) {
+              maxLength = currentLength;
+              resultSubstring = str1.substring(i, i + currentLength);
+            }
     }
   }
   
