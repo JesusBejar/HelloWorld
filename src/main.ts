@@ -1,9 +1,6 @@
-// str 1
-// str 2
+// inputs
 let str1 = "";
 let str2 = "";
-let i = 0;
-let j = 0;
 
 // main function (str1, str2)
 function longestCommonSubstring(str1: string, str2: string): string {
@@ -27,14 +24,21 @@ function longestCommonSubstring(str1: string, str2: string): string {
   
   return resultSubstring || "No common substring found";
 }
+
+// recursive function
+function findLongestCommonSubstring(str1: string, str2: string, i: number, j: number, currentLength: number): number {
+  // base case 1, reached the end of either str
+  if (i >= str1.length || j >= str2.length) {
+    return currentLength;
+  }
+  
+  // base case 2, characters don't match - stop counting
   if (str1[i] !== str2[j]) {
-    return "character in strings don't match"
+    return currentLength;
   }
-
-
-  // recursive function (str1, str2, i, j, length)
-  function findLongestCommonSubstring(str1, str2, i, j, length) {
-  }
+  
+  // recursive case, characters match! 
+  return findLongestCommonSubstring(str1, str2, i + 1, j + 1, currentLength + 1);
 }
 
 // init function??
