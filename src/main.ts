@@ -20,20 +20,36 @@ syntaxBtn.addEventListener("click", () => {
 }); 
 
 genericBtn.addEventListener("click", () => {
-  throw new Error("Generic error!");
+  try {
+    throw new Error("Generic error!");
+  } catch (error) {
+    genericError.textContent = `${error.name}: ${error.message}`;
+  }
 }); 
 
 rangeBtn.addEventListener("click", () => {
-  throw new RangeError("Range error!");
+  try {
+    throw new RangeError("Range error!");
+  } catch (error) {
+    rangeError.textContent = `${error.name}: ${error.message}`;
+  }
 }); 
 
 typeBtn.addEventListener("click", () => {
-  throw new TypeError("Type error!");
+  try {
+    throw new TypeError("Type error!");
+  } catch (error) {
+    typeError.textContent = `${error.name}: ${error.message}`;
+  }
 }); 
 
 referenceBtn.addEventListener("click", () => {
-  throw new ReferenceError("Reference error!");
-}); 
+  try {
+    throw new ReferenceError("Reference error!");
+  } catch (error) {
+    referenceError.textContent = `${error.name}: ${error.message}`;
+  }
+});
 
 }
 
