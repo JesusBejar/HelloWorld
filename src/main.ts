@@ -21,7 +21,7 @@ function longestCommonSubstring(str1: string, str2: string): string {
             // recursion
             let currentLength = findLongestCommonSubstring(str1, str2, i, j, 0);
       
-            // If this is the longest match we've found so far, remember it!
+            // this is the longest match we've found so far
             if (currentLength > maxLength) {
               maxLength = currentLength;
               resultSubstring = str1.substring(i, i + currentLength);
@@ -50,15 +50,17 @@ function findLongestCommonSubstring(str1: string, str2: string, i: number, j: nu
 
 // init function
 function init() {
-  let input1 = document.querySelector("#strOne") as HTMLElement;
-  let input2 = document.querySelector("#strTwo") as HTMLElement;
+  let input1 = document.querySelector("#strOne") as HTMLInputElement;
+  let input2 = document.querySelector("#strTwo") as HTMLInputElement;
   const btn = document.querySelector("#btn") as HTMLButtonElement;
   const result = document.querySelector("#result") as HTMLElement;
 
   btn.addEventListener("click", () => {
-    let str1 = input1.toString()
-    let str2 = input2.toString()
+    let str1 = input1.value
+    let str2 = input2.value
     const answer = longestCommonSubstring(str1, str2);
     result.textContent = `Longest common substring: "${answer}"`;
   });
 }
+
+window.onload = init;
