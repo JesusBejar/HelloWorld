@@ -1,8 +1,8 @@
-const syntaxBtn = document.querySelector("#btn") as HTMLElement;  
-const runtimeBtn = document.querySelector("#btn") as HTMLElement;  
-const logicBtn = document.querySelector("#btn") as HTMLElement;  
-const typeBtn = document.querySelector("#btn") as HTMLElement;  
-const referenceBtn = document.querySelector("#btn") as HTMLElement;  
+const syntaxBtn = document.querySelector("#syntax-btn") as HTMLElement;  
+const runtimeBtn = document.querySelector("#runtime-btn") as HTMLElement;  
+const logicBtn = document.querySelector("#logic-btn") as HTMLElement;  
+const typeBtn = document.querySelector("#type-btn") as HTMLElement;  
+const referenceBtn = document.querySelector("#reference-btn") as HTMLElement;  
 
 const syntaxError = document.querySelector("#syntax-result") as HTMLElement;
 const runtimeError = document.querySelector("#runtime-result") as HTMLElement;
