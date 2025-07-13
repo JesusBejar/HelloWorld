@@ -10,3 +10,22 @@ const rangeError = document.querySelector("#range-result") as HTMLElement;
 const typeError = document.querySelector("#type-result") as HTMLElement;
 const referenceError = document.querySelector("#reference-result") as HTMLElement;
 
+syntaxBtn.addEventListener("click", () => {
+  throw new SyntaxError("Syntax error!");
+}); 
+
+genericBtn.addEventListener("click", () => {
+  throw new Error("Generic error!");
+}); 
+
+rangeBtn.addEventListener("click", () => {
+  throw new RangeError("Range error!");
+}); 
+
+typeBtn.addEventListener("click", () => {
+  throw new TypeError("Type error!");
+}); 
+
+referenceBtn.addEventListener("click", () => {
+  throw new ReferenceError("Reference error!");
+}); 
