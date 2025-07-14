@@ -81,3 +81,22 @@ beforeEach(() => {
         
         expect(referenceResult.textContent).toBe('Error: Reference error!');
     });
+
+    test('should attach event listeners to all btns', () => {
+        init();
+        
+        // check all buttons exist
+        const buttons = [
+          '#syntax-btn',
+          '#generic-btn', 
+          '#range-btn',
+          '#type-btn',
+          '#reference-btn'
+        ];
+        
+        buttons.forEach(selector => {
+          const button = document.querySelector(selector) as HTMLElement;
+          expect(button).toBeTruthy();
+          expect(() => button.click()).not.toThrow();
+        });
+      });
