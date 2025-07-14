@@ -16,7 +16,7 @@ syntaxBtn.addEventListener("click", () => {
     throw new SyntaxError("Syntax error!");
   } catch (error) {
     if (error instanceof Error) {
-      syntaxError.textContent = `${error.name}: ${error.message}`;
+      syntaxError.textContent = `Error: ${error.message}`;
     }
   }
 }); 
@@ -26,7 +26,7 @@ genericBtn.addEventListener("click", () => {
     throw new Error("Generic error!");
   } catch (error) {
     if (error instanceof Error) {
-      genericError.textContent = `${error.name}: ${error.message}`;
+      genericError.textContent = `Error: ${error.message}`;
     }
   }
 }); 
@@ -36,7 +36,7 @@ rangeBtn.addEventListener("click", () => {
     throw new RangeError("Range error!");
   } catch (error) {
     if (error instanceof Error) {
-      rangeError.textContent = `${error.name}: ${error.message}`;
+      rangeError.textContent = `Error: ${error.message}`;
     }
   }
 }); 
@@ -46,7 +46,7 @@ typeBtn.addEventListener("click", () => {
     throw new TypeError("Type error!");
   } catch (error) {
     if (error instanceof Error) {
-      typeError.textContent = `${error.name}: ${error.message}`;
+      typeError.textContent = `Error: ${error.message}`;
     }
   }
 }); 
@@ -56,7 +56,7 @@ referenceBtn.addEventListener("click", () => {
     throw new ReferenceError("Reference error!");
   } catch (error) {
     if (error instanceof Error) {
-      referenceError.textContent = `${error.name}: ${error.message}`;
+      referenceError.textContent = `Error: ${error.message}`;
     }
   }
 });
