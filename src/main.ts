@@ -1,4 +1,4 @@
-function init() {
+export function init() {
   const syntaxBtn = document.querySelector("#syntax-btn") as HTMLElement;   
   const genericBtn = document.querySelector("#generic-btn") as HTMLElement;  
   const rangeBtn = document.querySelector("#range-btn") as HTMLElement;  
