@@ -12,7 +12,7 @@ In this repository I am making 3 mini-projects/demos using the Typescript langua
 
 My purpose for creating these mini-demos is to learn more about the Typescript language. I've really enjoyed writing things in Typescript and I know that it leads to less bugs/defects within code. 
 
-[Software Demo Video]((https://www.loom.com/share/61ed376f5df34e2587c164968a1e5d73?sid=72ba7c6b-6f64-4a87-92fb-023b327255fb))
+[Software Demo Video](https://www.loom.com/share/61ed376f5df34e2587c164968a1e5d73?sid=5e252908-6fce-4d49-b7c7-f7dfed55a919)
 
 # Development Environment & Tools
 
